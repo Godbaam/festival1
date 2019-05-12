@@ -1,0 +1,1 @@
+web: gunicorn festival_hongik.wsgi --log-file -
