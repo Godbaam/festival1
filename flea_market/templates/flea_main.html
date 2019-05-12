@@ -1,0 +1,12 @@
+<h1>플리마켓 메인페이지입니다.</h1>
+
+<a href="{%url 'flea_marketpost'%}">게시글 추가하기</a>
+
+{% for flea_market in flea_markets.all%}
+    <a href="{%url 'flea_main' %}{{flea_market.id}}">
+    <h1> 제목 : {{flea_market.title}} </h1>
+    </a> 
+    <p> 날짜 : {{flea_market.pub_date}} </p> 
+    <p> 본문 미리보기 : {{flea_market.body}} </p> 
+    <br><br> 
+{%endfor%}
