@@ -1,33 +1,28 @@
-{% extends 'base.html' %}
+{%extends 'base.html'%}
 
-{% block content %}
+{%block content%}
 
+{%load staticfiles%}
 <header class="masthead" style="background-image: url('img/home-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>플리마켓페이지입니다. </h1>
+            <h1>개발자소개페이지입니다.</h1>
             <span class="subheading">사진넣기</span>
           </div>
         </div>
       </div>
     </div>
   </header>
-
+<div class="container">
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <div class="container">
-    <h1>새 글쓰기</h1>
-    <form method = "POST" enctype ="multipart/form-data">
-        {% csrf_token %}
-        <table class="mx-auto table-striped">
-            {{ form.as_table }}
-        </table>
-        <br>
-        <input type="submit" value="제출하기">
-    </form>
-  </div>
+  <h1 class="display-4">개발자사진</h1>
+  <br>
+
+</div>
+<img src="{%static '--.png'%}">
 </div>
 
 {%endblock%}

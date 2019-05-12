@@ -1,12 +1,74 @@
-<h1>플리마켓 메인페이지입니다.</h1>
+{%extends 'base.html'%}
 
-<a href="{%url 'flea_marketpost'%}">게시글 추가하기</a>
+{%block content%}
 
-{% for flea_market in flea_markets.all%}
-    <a href="{%url 'flea_main' %}{{flea_market.id}}">
-    <h1> 제목 : {{flea_market.title}} </h1>
-    </a> 
-    <p> 날짜 : {{flea_market.pub_date}} </p> 
-    <p> 본문 미리보기 : {{flea_market.body}} </p> 
-    <br><br> 
+{%load staticfiles%}
+
+<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>메인페이지입니다. 홍익와우페스티벌</h1>
+                        <span class="subheading"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
+
+<html>
+
+<head>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto text-center">
+                <div class="site-heading">
+                    <h1>플리마켓 메인 페이지 입니다.</h1>
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+   </head>
+
+<body>
+    <div class="ban2 ban" id="ban2">
+        <div class="col-lg-8 mx-auto text-center">
+            <div class="site-heading">
+                <br><br> <a class="newbtn" href="flea_new/">게시글 작성하기<br><br> </a>
+                <span class="subheading"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        {% for flea_market in flea_markets.all%} 
+
+            <div class="col-xs-6 col-lg-4 mx-auto text-center">
+                <div class="card h-card">
+                    <div class="h-img-wrapper">
+                        <img class="card-img-top h-img" src="/media/{{flea_market.image}}"  alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"> 제목 : {{flea_market.title}} </h5>
+                        <p class="card-text">
+                            <p> 날짜 : {{flea_market.pub_date}} </p> 
+                            <p> 본문 미리보기 : {{flea_market.summary}} </p> 
+                            <br>
+                        </p>
+                        <a href="{%url 'flea_main' %}{{flea_market.id}}" class="btn btn-outline-dark">자세히</a>
+                    </div>
+                </div>
+                <div style="margin: 40px;"></div>
+            </div>
 {%endfor%}
+        </div>
+        <div style="padding:10px;"> </div>
+    </div>
+   
+{%endblock%}
+</body>
+</html>

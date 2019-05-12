@@ -7,25 +7,59 @@
 
 <div class="container">
 
-<h1>메인페이지 입니다.</h1>
-<a href="{% url 'login' %}">Login</a> 
-
-<a href="{% url 'logout' %}">Logout</a> 
-<section class="bg-dark" id="about">
-        <div class="container my-auto">
-          <div class="row">
-            <a href="{% url 'line_up' %}">
-            <img src="{% static 'heu.jpg'%}" alt="">
-            </a>
-            <div class="col-lg-8 mx-auto text-center">
-              <h2 class="section-heading text-white">We've got what you need!</h2>
-              <hr class="light my-4">
-              <p class="text-faded mb-4">시작은 Bootstrap 끝은 내가만든 CSS</p>
-              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
-            </div>
+      <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>메인페이지입니다. 홍익와우페스티벌</h1>
+            <span class="subheading">사진넣기</span>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </header>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">라인업</h1>
+    <p class="lead font-weight-normal">중앙/공대/미대 라인업</p>
+    <a class="btn btn-outline-secondary" href="{% url 'line_up'%}">Coming soon</a>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">lost</h1>
+    <p class="lead font-weight-normal">잃어버린 물건을 찾아드려요</p>
+    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">자유게시판</h1>
+    <p class="lead font-weight-normal">실시간 소식을 자유롭게</p>
+    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">꿀팁</h1>
+    <p class="lead font-weight-normal">화장실,편의점, 오는길 등 주변정보 꿀팁</p>
+    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
 
 </div>
 {%endblock%}

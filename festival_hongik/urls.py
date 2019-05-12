@@ -18,13 +18,17 @@ from django.urls import path
 import account.views
 import festival_main.views
 import flea_market.views
+import honey.views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), 
     path('', festival_main.views.home, name='home'),
     path('line_up/', festival_main.views.line_up, name='line_up'),
+    path('line_up_en/', festival_main.views.line_up_en, name='line_up_en'),
+    path('line_up_art/', festival_main.views.line_up_art, name='line_up_art'),
+    path('contact/', festival_main.views.contact, name='contact'), 
 
     path('signup/', account.views.signup, name='signup'),
     path('login/', account.views.login, name='login'),
@@ -35,5 +39,9 @@ urlpatterns = [
     path('flea_main/flea_create/', flea_market.views.flea_create, name='flea_create'),
     path('flea_main/flea_new/', flea_market.views.flea_marketpost, name='flea_marketpost'),
 
+    path('drink/', honey.views.drink, name='drink'),
+    path('map/', honey.views.map, name='map'),
+    path('store/', honey.views.store, name='store'),
+    path('toilet/', honey.views.toilet, name='toilet'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

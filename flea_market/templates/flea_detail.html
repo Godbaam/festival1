@@ -1,6 +1,84 @@
+{%extends 'base.html'%}
 
-        <h1> 제목 : {{flea_market.title}} </h1>
-        </a> 
-        <img src="/media/{{flea_market.image}}" alt="">
-        <p> 날짜 : {{flea_market.pub_date}} </p> 
-        <p> 본문 미리보기 : {{flea_market.body}} </p> 
+{%block content%}
+
+{%load staticfiles%}
+<!DOCTYPE html>
+
+<head>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto text-center">
+                <div class="site-heading">
+                    <h1></h1>
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</head>
+<br><br>
+
+<body>
+    <div class="row">
+        <div class="card col-12" style=" margin-top: 50px;">
+            <div class="card-body">
+                <div class="row">
+                    <div class=" col-xl-2"></div>
+                    <div class="col-xs-12 col-xl-4">
+                        <img class="image1" src="{% static '--.png'%}">
+                    </div>
+
+<div class="container">
+    <table class="table text-center">
+    <thead>
+    <div style="margin-top:30px;">
+        <div class="text-center">
+            <h4><strong>
+                제_________목{{ flea_market.title }}
+            </strong></h4>
+        </div>
+    </div>
+    </thead>
+        <tbody>
+            <tr>
+            <th scope="row"><font size="3"> <strong>업로드 시간</strong></font></th>
+            <td><font size="3">언제 업로드?{{flea_market.pub_date}}</font></td>
+            </tr>
+            <tr>
+                <th scope="row"><font size="3"> <strong>사진</strong></font></th>
+                <td><font size="3">사진</font></td>
+                <img src="/media/{{flea_market.image}}" alt="">
+                </tr>
+            <tr>
+            <th scope="row"><font size="5"> <strong>내용</strong></font></th>
+            <td><font size="5">우리 마켓은!{{flea_market.body}}</font></td>
+            </tr>
+            <tr>
+            <td colspan="2">
+                <div class="col col-xs-3 col-xl-4 text-center">
+                    <a href="{% url 'flea_main' %}">돌아가기</a>
+                </div>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+                <div style="margin-bottom:50px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- bootstrap4 js관련 CDN 부분 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+{%endblock%}
+</body>
+</html>

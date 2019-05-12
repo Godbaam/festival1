@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'festival_main.apps.FestivalMainConfig',
     'flea_market.apps.FleaMarketConfig',
     'account.apps.AccountConfig',
+    'honey.apps.HoneyConfig',
 ]
 
 MIDDLEWARE = [
