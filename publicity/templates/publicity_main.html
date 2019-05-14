@@ -1,24 +1,29 @@
 {%extends 'base.html'%}
+{% load staticfiles %}
 
 {%block content%}
     
 
+<center>
+    <img class="image1" src="{% static 'free.png'%}" style="width: 100%; height: auto;" alt="사진">
+</center>
 
 
 <main role="main">
 
     {% if user.is_authenticated %}
-            <div class="col-lg-8 mx-auto text-center">
+          <div class="col-lg-8 mx-auto text-center mt-3">
                     <div class="site-heading">
-                        <br><br> <a class="newbtn" href="{% url 'publicity_new' %}">게시글 작성하기<br><br> </a>
+                        <a href="{%url 'publicity_new' %}" class="btn btn-outline-dark">게시글 작성하기</a>
                         <span class="subheading"></span>
                     </div>
                 </div>
                 {%else%}
-                <div class="col-lg-8 mx-auto text-center">
+                <div class="col-lg-8 mx-auto text-center mt-3">
+
                         <div class="site-heading">
-                            <br><br> <a class="newbtn" href="{%url 'login'%}">로그인하기<br><br> </a>
-                            <span class="subheading"></span>
+                        <a href="{%url 'login' %}" class="btn btn-outline-dark">로그인</a>
+                        <span class="subheading"></span>
                         </div>
                     </div>
                 </div>
@@ -26,26 +31,30 @@
 
     
   </main>
-
-<div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-        {% for publicity in publicity.all %} 
-        <div class="col-md-4">
-          <a href="{% url 'publicity_detail' publicity.id %}">
-
-            <div class="card mb-4 shadow-sm">
-              <img class="card-img-top" src="/media/{{publicity.image}}" alt="">
-              <div class="card-body">
-                <p class="card-text">{{publicity.title}}</p>
-                <div class="d-flex justify-content-between align-items-center">
+        <div class="container">
+            <div class="row">
+            {% for publicity in publicity.all%} 
+                <div class="col-xs-6 col-lg-4 mx-auto text-center mt-3">
+                    <div class="card h-card">
+                        <div class="h-img-wrapper">
+                            <img class="card-img-top h-img" src="/media/{{publicity.image}}"  alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"> 제목 : {{publicity.title}} </h5>
+                            <p class="card-text">
+                                <p> 날짜 : {{publicity.pub_date}} </p> 
+                                <p> {{publicity.summary}} </p> 
+                                <br>
+                            </p>
+                            <a href="{% url 'publicity_detail' publicity.id %}" class="btn btn-outline-dark">자세히</a>
+                        </div>
+                    </div>
+                    <div style="margin: 40px;"></div>
                 </div>
-              </div>
+            {%endfor%}
             </div>
-          </a>
+            <div style="padding:10px;"> </div>
         </div>
-
-        {%endfor%}
+    </body> 
 
 {%endblock%}

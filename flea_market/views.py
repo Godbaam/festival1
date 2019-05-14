@@ -2,13 +2,18 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .form import Flea_marketPost
 from .models import Flea_market
+from django.core.paginator import Paginator
 
 
 # Create your views here.
 
 def flea_main(request):
-    flea_markets = Flea_market.objects
-    return render(request, 'flea_main.html', {'flea_markets' : flea_markets})
+    flea_markets = Flea_market.objects.order_by('-pub_date')
+    flea_market_list=Flea_market.objects.all().order_by('-pub_date')
+    paginator=Paginator(flea_market_list,5)
+    page=request.GET.get('page')
+    posts=paginator.get_page(page)
+    return render(request, 'flea_main.html', {'flea_markets' : flea_markets, 'posts':posts})
 
 def flea_detail(request, flea_market_id):
     flea_detail = get_object_or_404(Flea_market, pk=flea_market_id)
@@ -28,7 +33,7 @@ def flea_marketpost(request):
             flea_market = form.save(commit=False)
             flea_market.pub_date = timezone.now()
             flea_market.save()
-            return redirect('home')
+            return redirect('flea_main')
 
     else:
         form = Flea_marketPost()

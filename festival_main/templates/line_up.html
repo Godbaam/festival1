@@ -2,32 +2,54 @@
 
 {%block content%}
 
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&amp;subset=korean" rel="stylesheet">
+   
+
 {%load staticfiles%}
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>라인업페이지입니다.</h1>
-            <span class="subheading">사진넣기</span>
+<header class="masthead">
+    <center>
+      <img class="image1" src="{% static 'lineup.png'%}" style="width: 100%; height: auto;" alt="사진">
+    </center>
+    <!--
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="site-heading">
+                <h1>라인업페이지입니다.</h1>
+                <span class="subheading">사진넣기</span>
+              </div>
+            </div>
           </div>
+        </div>-->
+      </header>
+    <div class="container">
+      <center>
+        <div class="pricing-header  mx-auto">
+    <!--     <h1 class="display-4">대동제 라인업</h1>-->
+          
+          <p class="lead mt-2">
+            <font size ="6" color = "black"><strong>5월 15일</strong></font>
+          </p>
+            <img class="image1" src="{% static 'beenzino.png'%}" width="100%" alt="사진">
+            <img class="image1" src="{% static 'redvelvet.png'%}" width="100%" alt="사진">
+          <br><br>
+          <p class="lead">
+            <font size ="6" color = "black"><strong>5월 16일</strong></font>
+          </p>
+            <img class="image1" src="{% static 'jan.png'%}" width="100%" alt="사진">
+            <img class="image1" src="{% static '10cm.png'%}" width="100%" alt="사진">
+            <img class="image1" src="{% static 'PSY.png'%}" width="100%" alt="사진">
+          <br><br>
+          <p class="lead">
+            <font size ="6" color = "black"><strong>5월 17일</strong></font>
+          </p>
+            <img class="image1" src="{% static 'yh.png'%}" width="100%" alt="사진">
+            <img class="image1" src="{% static 'dynamicduo.png'%}" width="100%" alt="사진">
+            <img class="image1 mb-3" src="{% static 'mbtfy.png'%}" width="100%" alt="사진"> 
+          <br>
         </div>
-      </div>
+      </center>
     </div>
-  </header>
-<div class="container">
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">대동제 라인업</h1>
-  <br>
-  <p class="lead">5/15일</p>
-  <br>
-  <p class="lead">5/16일</p>
-  <br>
-  <p class="lead">5/17일</p>
-  <br>
-</div>
-<img src="{%static '--.png'%}">
-</div>
 
 {%endblock%}

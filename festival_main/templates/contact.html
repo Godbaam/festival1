@@ -3,26 +3,82 @@
 {%block content%}
 
 {%load staticfiles%}
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>개발자소개페이지입니다.</h1>
-            <span class="subheading">사진넣기</span>
-          </div>
+
+
+  <center>
+    <img class="image1" src="{% static 'intro.png'%}" style="width: 100%; height: auto;" alt="사진">
+  </center>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mt-4 mx-auto">
+        <div class="site-heading text-center">
+      <font size ="5" color = "black"><strong>개발자 소개</strong></font>
         </div>
       </div>
     </div>
-  </header>
-<div class="container">
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">개발자사진</h1>
-  <br>
+  </div>
 
+
+<body>
+<center>
+<br>
+<div class="col-xs-6 col-lg-4 mx-auto text-center">
+  <div class="card h-card">
+      <div class="h-img-wrapper">
+          <img class="card-img-top h-img" src="{% static 'PSB.png'%}"  alt="Card image cap">
+      </div>
+      <div class="card-body">
+          <h5 class="card-title"> 박상범 </h5>
+      </div>
+  </div>
 </div>
-<img src="{%static '--.png'%}">
+<br>
+<div class="col-xs-6 col-lg-4 mx-auto text-center">
+  <div class="card h-card">
+      <div class="h-img-wrapper">
+          <img class="card-img-top h-img" src="{% static 'CYS.png'%}"  alt="Card image cap">
+      </div>
+      <div class="card-body">
+          <h5 class="card-title"> 최연식 </h5>
+      </div>
+  </div>
 </div>
+<br>
+<div class="col-xs-6 col-lg-4 mx-auto text-center">
+  <div class="card h-card">
+      <div class="h-img-wrapper">
+          <img class="card-img-top h-img" src="{% static 'MJH.png'%}"  alt="Card image cap">
+      </div>
+      <div class="card-body">
+          <h5 class="card-title"> 문정혁 </h5>
+      </div>
+  </div>
+</div>
+<br>
+<div class="col-xs-6 col-lg-4 mx-auto text-center">
+  <div class="card h-card">
+      <div class="h-img-wrapper">
+          <img class="card-img-top h-img" src="{% static 'PMH.png'%}"  alt="Card image cap">
+      </div>
+      <div class="card-body">
+          <h5 class="card-title"> 박민희 </h5>
+      </div>
+  </div>
+</div>
+<br>
+<div class="col-xs-6 col-lg-4 mx-auto text-center">
+  <div class="card h-card">
+      <div class="h-img-wrapper">
+          <img class="card-img-top h-img" src="{% static 'JYW.png'%}"  alt="Card image cap">
+      </div>
+      <div class="card-body">
+          <h5 class="card-title"> 조연우 </h5>
+      </div>
+  </div>
+</div>
+</center>
+
+</body>
 
 {%endblock%}

@@ -9,9 +9,9 @@ from django.core.paginator import Paginator
 
 
 def lostfound_main(request):
-    lostfounds=Lostfound.objects
-    lostfound_list=Lostfound.objects.all()
-    paginator=Paginator(lostfound_list,4)
+    lostfounds=Lostfound.objects.order_by('-pub_date')
+    lostfound_list=Lostfound.objects.all().order_by('-pub_date')
+    paginator=Paginator(lostfound_list,5)
     page=request.GET.get('page')
     posts=paginator.get_page(page)
     return render(request,'lostfound_main.html',{'lostfounds':lostfounds, 'posts':posts})

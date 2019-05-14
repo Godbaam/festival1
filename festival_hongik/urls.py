@@ -29,7 +29,8 @@ urlpatterns = [
     path('', festival_main.views.home, name='home'),
     path('line_up/', festival_main.views.line_up, name='line_up'),
     path('line_up_en/', festival_main.views.line_up_en, name='line_up_en'),
-    path('line_up_art/', festival_main.views.line_up_art, name='line_up_art'),
+    path('line_up_art/', festival_main.views.line_up_art, name='line_up_art'),    
+    path('beatz/', festival_main.views.beatz, name='beatz'),
     path('contact/', festival_main.views.contact, name='contact'), 
 
     path('signup/', account.views.signup, name='signup'),

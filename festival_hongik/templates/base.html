@@ -1,4 +1,8 @@
+
 <!DOCTYPE html>
+
+{% load staticfiles %}
+
 <html lang="en">
 
   <head>
@@ -17,8 +21,12 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-  
-
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&amp;subset=korean" rel="stylesheet">
+    <style>
+      div {
+      font-family: 'Do Hyeon', sans-serif;
+      }
+    </style>
   </head>
     <!--<header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
@@ -28,7 +36,7 @@
             <p class="text-faded mb-5">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
           </div>
-        </div>
+        </div>ㄴ
       </div>
     </header>-->
 
@@ -38,63 +46,82 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color:rgba(0, 0, 0, 0.5)">
       <div class="container">
 
-        <a class="navbar-brand js-scroll-trigger" href="{%url 'home'%}">Hongik-Festival</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand js-scroll-trigger text-white title_yunwoo" href="{%url 'home'%}">Hongik-Festival</a>
+        <button class="custom-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="custom-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse " id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <li class="nav-item dropdown">
-                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >LINE UP</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'line_up'%}">중앙라인업</a>
-                        <a class="dropdown-item" href="{% url 'line_up_en'%}">공대라인업</a>
-                        <a class="dropdown-item" href="{% url 'line_up_art'%}">미대라인업</a>
+                 <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >라인업 </a>
+                    <div class="dropdown-menu ">
+                      <a class="dropdown-item" href="{% url 'line_up'%}">중앙라인업</a>
+                      <a class="dropdown-item" href="{% url 'line_up_en' %}">공대라인업</a>
+                      <a class="dropdown-item" href="{% url 'line_up_art' %}">미대라인업</a>
+                      <a class="dropdown-item" href="{% url 'beatz'%}">비츠무대일정</a>
                     </div>
-                  </li>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'flea_main'%}">플리마켓</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'lostfound_main'%}">분실물</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{% url 'publicity_main'%}">자유게시판</a>
-              </li>
-             <li class="nav-item">
-             <li class="nav-item dropdown">
-                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >꿀팁</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'toilet'%}">화장실정보</a>
-                        <a class="dropdown-item" href="{% url 'store'%}">편의점위치</a>
-                        <a class="dropdown-item" href="{% url 'drink'%}">주점위치</a>
-                        <a class="dropdown-item" href="{% url 'map'%}">오는길</a>
-                    </div>
-                  </li>
-              </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{% url 'contact'%}">개발자소개</a>
                 </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'flea_main'%}">
+                  <font size="3" color="white">플리마켓</font>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'lostfound_main'%}">
+                  <font size="3" color="white">분실물</font>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'publicity_main'%}">
+                  <font size="3" color="white">자유게시판</font>
+              </a>
+            </li>
+            <li class="nav-item">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >
+                  <font size="3" color="white"> 꿀팁 </font>
+                </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{% url 'toilet'%}">화장실정보</a>
+                      <a class="dropdown-item" href="{% url 'drink'%}">축제 지도</a>
+                      <a class="dropdown-item" href="{% url 'store'%}">편의점위치</a>
+                      <a class="dropdown-item" href="{% url 'map'%}">오는길</a>
+                    </div>
+              </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'contact'%}">
+                  <font size="3" color="white">개발자 소개</font>
+              </a>
+            </li>
+
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+                  <a class="nav-link js-scroll-trigger" href="javascript:{document.getElementById('logout').submit()}">
+                  <font size="3" color="white">로그아웃</font>
+                  </a>
                   <form id="logout" method="POST" action="{% url 'logout' %}">
                   {% csrf_token %} <input type="hidden" />
                   </form>
                  </li>
                 {%else%}
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Login</a>
+                  <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">
+                  <font size="3" color="white">로그인</font>
+                  </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="{% url 'signup' %}">Signup</a>
+                  <a class="nav-link js-scroll-trigger" href="{% url 'signup' %}">
+                  <font size="3" color="white">회원가입</font>
+                  </a>
                 </li> 
                 {% endif %}
+
           </ul>
         </div>
       </div>
@@ -104,24 +131,26 @@
     {% endblock %}
     </body>
 
-  <footer class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md">
-      푸터입니다.
-    </div>
-    <div class="col-6 col-md">
-      <h5>Features</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Cool stuff</a></li>
-        <li><a class="text-muted" href="#">Random feature</a></li>
-        <li><a class="text-muted" href="#">Team feature</a></li>
-        <li><a class="text-muted" href="#">Stuff for developers</a></li>
-        <li><a class="text-muted" href="#">Another one</a></li>
-        <li><a class="text-muted" href="#">Last time</a></li>
-      </ul>
-    </div>
-
-  </div>
+  <footer>
+    <center>
+        <img class ="img-fluid" src="/static/footer.png" alt="">
+    </center>
 </footer>
 
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
 </html>
+
+
+<style>
+.title_yunwoo{
+  font-family: sans-serif;
+  color:20rem;
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+</style>

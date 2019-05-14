@@ -5,61 +5,35 @@
 
 {% load staticfiles %}
 
-<div class="container">
-
-      <header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>메인페이지입니다. 홍익와우페스티벌</h1>
-            <span class="subheading">사진넣기</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">라인업</h1>
-    <p class="lead font-weight-normal">중앙/공대/미대 라인업</p>
-    <a class="btn btn-outline-secondary" href="{% url 'line_up'%}">Coming soon</a>
-  </div>
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-</div>
-
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">lost</h1>
-    <p class="lead font-weight-normal">잃어버린 물건을 찾아드려요</p>
-    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-  </div>
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-</div>
-
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">자유게시판</h1>
-    <p class="lead font-weight-normal">실시간 소식을 자유롭게</p>
-    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-  </div>
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-</div>
-
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">꿀팁</h1>
-    <p class="lead font-weight-normal">화장실,편의점, 오는길 등 주변정보 꿀팁</p>
-    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-  </div>
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-</div>
-
-</div>
+<header class="masthead" style="background-image: url('intro.png')">
+    <center>
+      <img class="image1" src="{% static 'intro.png'%}" style="width: 100%; height: auto;" alt="사진">
+    </center>
+    </header>
+    <center>
+      <section class="h-main">
+      <a href="line_up">
+      <img class="h-main-img" src="{% static 'lineup.png'%}" style="width: 100%; height: auto;" alt="사진">
+      </a>
+      </section>
+      <section class="h-main">
+      <a href="{% url 'lostfound_main'%}">
+      <img class="h-main-img" src="{% static 'lost.png'%}" style="width: 100%; height: auto;" alt="사진">
+      </a>
+      </section>
+      <section class="h-main">
+      <a href="flea_main">
+      <img class="h-main-img" src="{% static 'fleemarket.png'%}" style="width: 100%; height: auto;" alt="사진">
+      </a>
+      </section>
+      <section class="h-main">
+      <a href="{% url 'publicity_main'%}">
+      <img class="h-main-img" src="{% static 'free.png'%}" style="width: 100%; height: auto;" alt="사진">
+      </a>
+      </section>
+      <section class="bg-dark">
+      <img class="h-main-img" src="{% static 'tips.png'%}" style="width: 100%; height: auto;" alt="사진">
+  
+      </section>
+    </center>
 {%endblock%}

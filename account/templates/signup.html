@@ -1,17 +1,17 @@
 {%extends 'base.html'%}
+{% load staticfiles %}
 
 {%block content%}
 
+<center>
+        <img class="image1" src="{% static 'intro.png'%}" style="width: 100%; height: auto;" alt="사진">
+</center>
 
-<div class="row">
-    <div class="col-12 col-md-3 col-lg-4"></div>
-        <div class="col-12 col-md-6 col-lg-4">
             <br>
             <br>
-            <div class="container" style="margin-top:100px;" >
-                <div class="card opacity" style="margin-top:15px;">
-                    <div class="containe text-center" style="margin-top:30px;">
-                        <h1> Hongik_festival </h1>
+                <div class="card opacity">
+                    <div class="containe text-center">
+                        <h1> Hongik-Festival </h1>
                         <h2> 회원가입 </h2> 
                         <h6> 간단한 회원정보를 입력해주세요.</h6>
                     </div>
@@ -26,24 +26,26 @@
                         <form action="{% url 'signup'%}" method="POST"> 
                             {% csrf_token %}
                             아이디
+                            <br>
+                            <input name = "username" type = "text" placeholder="아이디를 입력하세요"> 
+                            <br><br> 
+                            E-mail
                             <br> 
-                            <input name = "username" type = "text" value=""> 
-                            <br> <br> 
+                            <input name = "user_email" type = "email" placeholder="E-mail을 입력하세요">
+                            <br><br>  
                             비밀번호
                             <br> 
-                            <input name = "password1" type = "text" value=""> 
+                            <input name = "password1" type = "password" placeholder="비밀번호를 입력하세요"> 
                             <br> <br> 
                             비밀번호 확인
-                            <br> 
-                            <input name = "password2" type = "text" value=""> 
+                            <br>
+                            <input name = "password2" type = "password" placeholder="비밀번호 확인"> 
                             <br> 
                             <br> 
                             <input type="submit" value="가입하기"> 
                         </form>
                     <br>
-                </div>
-            </div>
-        </div>
+          
     </div>
 </div>
 

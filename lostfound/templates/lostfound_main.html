@@ -4,59 +4,36 @@
 
 {%load staticfiles%}
 
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="site-heading">
-                        <h1>메인페이지입니다. 홍익와우페스티벌</h1>
-                        <span class="subheading"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-</header>
+<center>
+        <img class="image1" src="{% static 'lost.png'%}" style="width: 100%; height: auto;" alt="사진">
+</center>
 
-<html>
-
-<head>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto text-center">
-                <div class="site-heading">
-                    <h1>분실물 메인페이지 입니다.</h1>
-                    <span class="subheading"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-   </head>
 
 <body>
-    {% if user.is_authenticated %}
-            <div class="col-lg-8 mx-auto text-center">
-                    <div class="site-heading">
-                        <br><br> <a class="newbtn" href="{% url 'lostfound_new' %}">게시글 작성하기<br><br> </a>
-                        <span class="subheading"></span>
-                    </div>
-                </div>
-                {%else%}
-                <div class="col-lg-8 mx-auto text-center">
-                        <div class="site-heading">
-                            <br><br> <a class="newbtn" href="{%url 'login'%}">로그인하기<br><br> </a>
-                            <span class="subheading"></span>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
+        {% if user.is_authenticated %}
+        <div class="col-lg-8 mx-auto text-center mt-3">
+                  <div class="site-heading">
+                      <a href="{%url 'lostfound_new' %}" class="btn btn-outline-dark">게시글 작성하기</a>
+                      <span class="subheading"></span>
+                  </div>
+              </div>
+              {%else%}
+              <div class="col-lg-8 mx-auto text-center mt-3">
+
+                      <div class="site-heading">
+                      <a href="{%url 'login' %}" class="btn btn-outline-dark">로그인</a>
+                      <span class="subheading"></span>
+                      </div>
+                  </div>
+              </div>
+              {% endif %}
 
     <div class="container">
         <div class="row">
             
             {% for lostfound in posts%} 
 
-            <div class="col-xs-6 col-lg-4 mx-auto text-center">
+            <div class="col-xs-6 col-lg-4 mx-auto text-center mt-3">
                 <div class="card h-card">
                     <div class="h-img-wrapper">
                         <img class="card-img-top h-img" src="/media/{{lostfound.image}}"  alt="Card image cap">

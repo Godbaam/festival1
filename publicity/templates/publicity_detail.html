@@ -1,14 +1,19 @@
 {%extends 'base.html'%}
+{% load staticfiles %}
 
 {%block content%}
     
-
+<center>
+        <img class="image1" src="{% static 'free.png'%}" style="width: 100%; height: auto;" alt="사진">
+</center>
 
 <body>
-
-    
         <div class="container jumbotron">
+            
             <h1>{{ publicity_detail.title }}</h1>
+            <!--CYS!-->
+            <p>{{ publicity_detail.user }}</p>
+            <!--CYS-->
             <p>{{ publicity_detail.pub_date }}</p>
             <p>{{ publicity_detail.body }}</p>
             <img class="card-img-top" src = "{{ publicity_detail.image.url }}" alt="">        

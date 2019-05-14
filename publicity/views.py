@@ -6,7 +6,7 @@ from django.utils import timezone
 # Create your views here.
 
 def publicity_main(request) :
-    publicity = Publicity.objects
+    publicity = Publicity.objects.all().order_by('-pub_date')
     return render(request, 'publicity_main.html', {'publicity': publicity})
 
 def publicity_detail(request, publicity_id) :
@@ -17,14 +17,22 @@ def publicity_new(request) :
     return render(request, 'publicity_new.html')
 
 def publicity_post(request):
+    #CYS!
+    user = request.user
+    #CYS!
     if request.method == 'POST': 
         form = Publicity_Post(request.POST,request.FILES)
         if form.is_valid():
             publicity = form.save(commit=False)
             publicity.pub_date = timezone.now()
+            #CYS!
+            publicity.user = user
+            #CYS!
             publicity.save()
             return redirect('publicity_main')
 
     else:
         form = Publicity_Post()
         return render(request, 'publicity_new.html', {'form' : form})
+
+

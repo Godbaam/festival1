@@ -4,62 +4,42 @@
 
 {%load staticfiles%}
 
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="site-heading">
-                        <h1>메인페이지입니다. 홍익와우페스티벌</h1>
-                        <span class="subheading"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-</header>
 
-<html>
 
 <head>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto text-center">
-                <div class="site-heading">
-                    <h1>플리마켓 메인 페이지 입니다.</h1>
-                    <span class="subheading"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-   </head>
+        <center>
+          <img class="image1" src="{% static 'fleemarket.png'%}" style="width: 100%; height: auto;" alt="사진">
+        </center>
 
-<body>
-    <div class="ban2 ban" id="ban2">
-        
+
+    </head>
+
     
-        {% if user.is_authenticated %}
-            <div class="col-lg-8 mx-auto text-center">
-                    <div class="site-heading">
-                        <br><br> <a class="newbtn" href="flea_new/">게시글 작성하기<br><br> </a>
-                        <span class="subheading"></span>
-                    </div>
-                </div>
-                {%else%}
-                <div class="col-lg-8 mx-auto text-center">
-                        <div class="site-heading">
-                            <br><br> <a class="newbtn" href="{%url 'login'%}">로그인하기<br><br> </a>
-                            <span class="subheading"></span>
+    
+
+            <body>
+                {% if user.is_authenticated %}
+                <div class="col-lg-8 mx-auto text-center mt-3">
+                            <div class="site-heading">
+                                <a href="flea_new/" class="btn btn-outline-dark">게시글 작성하기</a>
+                                <span class="subheading"></span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                {% endif %}
-            
+                        {%else%}
+                        <div class="col-lg-8 mx-auto text-center mt-3">
+        
+                                <div class="site-heading">
+                                <a href="{%url 'login' %}" class="btn btn-outline-dark">로그인</a>
+                                <span class="subheading"></span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
 
     <div class="container">
         <div class="row">
-        {% for flea_market in flea_markets.all%} 
-
-            <div class="col-xs-6 col-lg-4 mx-auto text-center">
+        {% for flea_market in posts%} 
+            <div class="col-xs-6 col-lg-4 mx-auto text-center mt-3">
                 <div class="card h-card">
                     <div class="h-img-wrapper">
                         <img class="card-img-top h-img" src="/media/{{flea_market.image}}"  alt="Card image cap">
@@ -67,8 +47,8 @@
                     <div class="card-body">
                         <h5 class="card-title"> 제목 : {{flea_market.title}} </h5>
                         <p class="card-text">
-                            <p> 날짜 : {{flea_market.pub_date}} </p> 
-                            <p> 본문 미리보기 : {{flea_market.summary}} </p> 
+                            <p> 시간 : {{flea_market.pub_date}} </p> 
+                            <p> {{flea_market.summary}} </p> 
                             <br>
                         </p>
                         <a href="{%url 'flea_main' %}{{flea_market.id}}" class="btn btn-outline-dark">자세히</a>
@@ -76,11 +56,12 @@
                 </div>
                 <div style="margin: 40px;"></div>
             </div>
-{%endfor%}
+        {%endfor%}
         </div>
         <div style="padding:10px;"> </div>
     </div>
-   
+</body> 
+  
+
+<div class = "container"> {#first previous#} {% if posts.has_previous %} <a href="?page=1">First</a> <a href="?page={{posts.previous_page_number}}">Previous</a> {% endif %} {# 3of4 #} <span>{{posts.number}}</span> <span>of</span> <span>{{posts.paginator.num_pages}}</span> {# Next Last #} {% if posts.has_next %} <a href="?page={{posts.next_page_number}}">Next</a> <a href="?page={{posts.paginator.num_pages}}">Last</a> {%endif%} </div>
 {%endblock%}
-</body>
-</html>
