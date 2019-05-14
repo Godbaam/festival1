@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+
+{%block content%}
+    
+
+
+
+<main role="main">
+
+    {% if user.is_authenticated %}
+            <div class="col-lg-8 mx-auto text-center">
+                    <div class="site-heading">
+                        <br><br> <a class="newbtn" href="{% url 'publicity_new' %}">게시글 작성하기<br><br> </a>
+                        <span class="subheading"></span>
+                    </div>
+                </div>
+                {%else%}
+                <div class="col-lg-8 mx-auto text-center">
+                        <div class="site-heading">
+                            <br><br> <a class="newbtn" href="{%url 'login'%}">로그인하기<br><br> </a>
+                            <span class="subheading"></span>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+    
+  </main>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {% for publicity in publicity.all %} 
+        <div class="col-md-4">
+          <a href="{% url 'publicity_detail' publicity.id %}">
+
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="/media/{{publicity.image}}" alt="">
+              <div class="card-body">
+                <p class="card-text">{{publicity.title}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        {%endfor%}
+
+{%endblock%}

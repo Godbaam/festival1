@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'flea_market.apps.FleaMarketConfig',
     'account.apps.AccountConfig',
     'honey.apps.HoneyConfig',
+    'lostfound.apps.LostfoundConfig',
+    'publicity.apps.PublicityConfig',
 ]
 
 MIDDLEWARE = [

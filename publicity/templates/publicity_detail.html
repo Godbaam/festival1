@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+
+{%block content%}
+    
+
+
+<body>
+
+    
+        <div class="container jumbotron">
+            <h1>{{ publicity_detail.title }}</h1>
+            <p>{{ publicity_detail.pub_date }}</p>
+            <p>{{ publicity_detail.body }}</p>
+            <img class="card-img-top" src = "{{ publicity_detail.image.url }}" alt="">        
+            <a href="{% url 'publicity_main' %}">돌아가기</a>
+        </div>
+    
+    
+</body>
+
+{%endblock%}
+    
