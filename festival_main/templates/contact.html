@@ -3,82 +3,79 @@
 {%block content%}
 
 {%load staticfiles%}
+<head>
+    <center>
+      <img class="image1" src="{% static 'intro.png'%}" style="width: 100%; height: auto;" alt="사진">
+    </center>
 
+</head>
 
-  <center>
-    <img class="image1" src="{% static 'intro.png'%}" style="width: 100%; height: auto;" alt="사진">
-  </center>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mt-4 mx-auto">
-        <div class="site-heading text-center">
-      <font size ="5" color = "black"><strong>개발자 소개</strong></font>
+    <div class="overlay"></div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading text-center">
+        <font size ="5" color = "black"><strong>개발자 소개</strong></font>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-
-<body>
+  </header>
+<br>
 <center>
-<br>
-<div class="col-xs-6 col-lg-4 mx-auto text-center">
-  <div class="card h-card">
-      <div class="h-img-wrapper">
-          <img class="card-img-top h-img" src="{% static 'PSB.png'%}"  alt="Card image cap">
-      </div>
-      <div class="card-body">
-          <h5 class="card-title"> 박상범 </h5>
-      </div>
-  </div>
+    <div class = "container">
+    <div class="card-deck">
+    <div class="card">
+        <img src="{% static 'PSB.png'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">박상범</h5>
+        <p class="card-text">✌ 침 뚝뚝 </p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'CYS.png'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">최연식</h5>
+        <p class="card-text">✌ 눈물 뚝뚝</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'MJH.png'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">문정혁</h5>
+        <p class="card-text">✌ 꿀 뚝뚝</p>
+        </div>
+    </div>
+    </div>
 </div>
-<br>
-<div class="col-xs-6 col-lg-4 mx-auto text-center">
-  <div class="card h-card">
-      <div class="h-img-wrapper">
-          <img class="card-img-top h-img" src="{% static 'CYS.png'%}"  alt="Card image cap">
-      </div>
-      <div class="card-body">
-          <h5 class="card-title"> 최연식 </h5>
-      </div>
-  </div>
-</div>
-<br>
-<div class="col-xs-6 col-lg-4 mx-auto text-center">
-  <div class="card h-card">
-      <div class="h-img-wrapper">
-          <img class="card-img-top h-img" src="{% static 'MJH.png'%}"  alt="Card image cap">
-      </div>
-      <div class="card-body">
-          <h5 class="card-title"> 문정혁 </h5>
-      </div>
-  </div>
-</div>
-<br>
-<div class="col-xs-6 col-lg-4 mx-auto text-center">
-  <div class="card h-card">
-      <div class="h-img-wrapper">
-          <img class="card-img-top h-img" src="{% static 'PMH.png'%}"  alt="Card image cap">
-      </div>
-      <div class="card-body">
-          <h5 class="card-title"> 박민희 </h5>
-      </div>
-  </div>
-</div>
-<br>
-<div class="col-xs-6 col-lg-4 mx-auto text-center">
-  <div class="card h-card">
-      <div class="h-img-wrapper">
-          <img class="card-img-top h-img" src="{% static 'JYW.png'%}"  alt="Card image cap">
-      </div>
-      <div class="card-body">
-          <h5 class="card-title"> 조연우 </h5>
-      </div>
-  </div>
+<br><br>
+    <div class = "container">
+    <div class="card-deck">
+    <div class="card">
+        <img src="{% static 'PMH.png'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">박민희</h5>
+        <p class="card-text">✌ 코딩 뚝뚝 </p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'JYW.png'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">조연우</h5>
+        <p class="card-text">✌ 콧물 뚝뚝</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'like.png'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">홍익대학교 멋쟁이사자처럼</h5>
+        <p class="card-text">✌ 사자와 아기사자가 만든 축제 서비스 <br> 이쁘게 봐주세요^^ </p>
+        </div>
+    </div>
+    </div>
 </div>
 </center>
-
 </body>
 
 {%endblock%}
